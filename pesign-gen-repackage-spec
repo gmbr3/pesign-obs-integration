@@ -39,12 +39,12 @@ my @rpms;
 $ENV{LC_ALL} = "en_US.UTF-8";
 
 GetOptions(
-	"help|h" => sub { print $USAGE; exit; },
-	"directory|d=s" => \$directory,
-	"output|o=s" => \$output,
-	"cert-subpackage|c=s" => \$cert_subpackage,
-	"compress|C=s" => \$compress,
-	"macros|M=s" => \$macros_file,
+	"help" => sub { print $USAGE; exit; },
+	"directory=s" => \$directory,
+	"output=s" => \$output,
+	"cert-subpackage=s" => \$cert_subpackage,
+	"compress=s" => \$compress,
+	"macros=s" => \$macros_file,
 ) or die $USAGE;
 @rpms = @ARGV;
 if (!@rpms) {
