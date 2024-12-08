@@ -219,6 +219,7 @@ popd
 	--directory=%buildroot "${rpms[@]}"
 rpmbuild --define "%%buildroot %buildroot" --define "%%disturl $disturl" \
 	--define "%%_builddir $PWD" \
+ 	--define "%%buildsubdir %{name}-%{version}" \
 	--define "%%_binaries_in_noarch_packages_terminate_build 0" \
 	--define "%_suse_insert_debug_package %%{nil}" -bb repackage.spec
 
